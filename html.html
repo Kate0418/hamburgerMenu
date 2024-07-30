@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- リセットCSS -->
+        <link rel="stylesheet" href="reset.css">
+        
+        <!-- CSS -->
+        <style>
+            /* 表示 */
+            body {
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+            img {
+                width: 50px;
+            }
+            .header {
+                padding: 10px;
+                height: 70px;
+                background-color: #B4BD4F;
+            }
+            .top {
+                padding: 20px;
+                text-align: center;
+                z-index: 1;
+            }
+
+            /* 非表示 */
+            .close {
+                display: none;
+            }
+            .menu {
+                display: none;
+            }
+            .category {
+                width: 30vw;
+                height: 100vh;
+                top: 70px;
+                background-color: white;
+                position: fixed;
+                z-index: 3;
+            }
+            .background {
+                width: 100vw;
+                height: 100vh;
+                top: 70px;
+                background-color: gray;
+                position: fixed;
+                opacity: 0.3;
+                z-index: 2;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- ヘッター -->
+        <div class="header">
+            <img class="hamburger" src="hamburger.png">
+            <img class="close" src="close.png">
+        </div>
+
+        <!-- トップ画面 -->
+         <div class="top">
+            <h1>トップ画面です。</h1>
+         </div>
+
+        <!-- メニュー画面 -->
+        <div class="menu">
+            <div class="category">
+                <ul>
+                    <li>メニュー1</li>
+                    <li>メニュー2</li>
+                    <li>メニュー3</li>
+                </ul>
+            </div>
+            <div class="background">
+            </div>
+        </div>
+
+        <!-- JQuery -->
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous">
+        </script>
+        <script>
+            $(".hamburger").click(function(){
+                $(".hamburger").hide();
+                $(".close").show();
+                $(".menu").show();
+            });
+            $(".close").click(function(){
+                $(".hamburger").show();
+                $(".close").hide();
+                $(".menu").hide();
+            });
+        </script>
+    </body>
+</html>
